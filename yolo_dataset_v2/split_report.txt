@@ -1,0 +1,30 @@
+======================================================================
+yolo_dataset_v2 划分报告
+======================================================================
+划分模式: SPATIAL
+COPY 模式: True, seed=42
+
+[每集合统计]
+  train: CSV 记录  600 | 实际 PNG  600 | 实际 TXT  600 | 正样本  399 | 负样本  201 | PNG/TXT 一一对应: PASS
+  val  : CSV 记录  189 | 实际 PNG  189 | 实际 TXT  189 | 正样本   33 | 负样本  156 | PNG/TXT 一一对应: PASS
+  test : CSV 记录  196 | 实际 PNG  196 | 实际 TXT  196 | 正样本   12 | 负样本  184 | PNG/TXT 一一对应: PASS
+  缓冲带(不进入任何集合): 25 切片
+
+[source_tif 归属]
+  Ordos_S2_MultiBand_2025-0000000000-0000000000.tif: ['train'] (切片分布: {'train': 185})
+  Ordos_S2_MultiBand_2025-0000000000-0000018944.tif: ['train', 'val'] (切片分布: {'val': 74, 'train': 51, 'DROPPED_BUFFER': 9})
+  Ordos_S2_MultiBand_2025-0000000000-0000037888.tif: ['test', 'val'] (切片分布: {'test': 106, 'val': 23, 'DROPPED_BUFFER': 3})
+  Ordos_S2_MultiBand_2025-0000018944-0000000000.tif: ['train'] (切片分布: {'train': 249})
+  Ordos_S2_MultiBand_2025-0000018944-0000018944.tif: ['train', 'val'] (切片分布: {'train': 115, 'val': 83, 'DROPPED_BUFFER': 11})
+  Ordos_S2_MultiBand_2025-0000018944-0000037888.tif: ['test', 'val'] (切片分布: {'test': 90, 'val': 9, 'DROPPED_BUFFER': 2})
+  train∩val 共享 TIF: 2
+  train∩test 共享 TIF: 0
+  val∩test 共享 TIF: 2
+
+[跨集合 UTM bbox 重叠验证]
+  train/val/test 跨集合重叠切片对: 0
+  结论: PASS — 跨集合零空间重叠, 无泄漏
+
+[旧数据]
+  旧 yolo_dataset 未删除未修改: E:\260827YOLORUN\yolo_dataset
+  缓冲带切片仅未复制到 v2, 原始文件仍在旧目录中

@@ -1,0 +1,17 @@
+.conda/
+.trae/
+__pycache__/
+*.py[cod]
+*.tif
+*.tiff
+GEE_Export_2025/
+yolo_dataset/
+yolo_dataset_v2/images/
+yolo_dataset_v2/labels/
+runs/segment/ordos_farmland_v1/
+*.onnx
+*.engine
+wandb/
+.ipynb_checkpoints/
+*.zip
+_probe.py
